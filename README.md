@@ -1,2 +1,6 @@
-# albums-2015
-A bunch of musical projects from the year all in one place.
+Some Favorite Albums from 2015
+==========================================================
+
+Music is cool. Here is some of the coolest from this year I think.
+
+Webpage: http://tresdon.github.io/albums-2015/
