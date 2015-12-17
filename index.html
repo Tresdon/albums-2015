@@ -7,6 +7,12 @@
 		<link rel="icon" href="favicon.ico">
 		<script type="text/javascript">
 		function play(idString){
+			//pause all other audio
+			var list = document.getElementsByTagName("Audio");
+			var i;
+			for(i = 0; i < list.length; i++){
+				list[i].pause();
+			}
 			var audio = document.getElementById(idString);
 			if(!audio.paused){
 				audio.pause();
@@ -16,39 +22,80 @@
 				audio.play();
 			}
        }
+
+			 //checks if a song is playing and sets "playing" to that song and returns true
+			 // or returns false meaning that no song is playing.
+			 function checkPlaying()
+			 {
+					var list = document.getElementsByTagName("Audio");
+					var i;
+					for(i = 0; i < list.length; i++){
+						if(!list[i].paused){ //this element is playing
+							document.getElementById("playing").innerHTML = list[i].getAttribute("title");
+							setTimeout(checkPlaying,1000);
+							return;
+						}
+					}
+					setTimeout(checkPlaying,1000);
+					document.getElementById("playing").innerHTML = "";
+					return;
+				}
+
+				function updatePlaying()
+				{
+					if(!checkPlaying()){
+						document.getElementById("playing").innerHTML = "";
+					}
+					updatePlaying();
+				}
+
+				checkPlaying();
+
+
 	   </script>
 	</head>
  <body>
-	
+	 <h1> Currently Playing: <span id="playing"></span>
 	<div id = "audio">
-		<audio id="alright" src = "sound/alright.ogg" type="audio/ogg"></audio>
-		<audio id="let-it-happen" src = "sound/let-it-happen.ogg" type="audio/ogg"></audio>
-		<audio id="sound-and-color" src = "sound/sound-and-color.ogg" type="audio/ogg"></audio>
-		<audio id="strange-hellos" src = "sound/strange-hellos.ogg" type="audio/ogg"></audio>
-		<audio id="death-with-dignity" src = "sound/death-with-dignity.ogg" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
-		<audio id="" src = "sound/" type="audio/ogg"></audio>
+		<audio id="alright" src = "sound/alright.ogg"
+		type="audio/ogg" title = "Kendrick Lamar - Alright"></audio>
+		<audio id="let-it-happen" src = "sound/let-it-happen.ogg"
+		type="audio/ogg" title = "Tame Impala - Let It Happen"></audio>
+		<audio id="sound-and-color" src = "sound/sound-and-color.ogg"
+		type="audio/ogg" title = "Alabama Shakes - Sound and Color"></audio>
+		<audio id="strange-hellos" src = "sound/strange-hellos.ogg"
+		type="audio/ogg" title = "Torres - Strange Hellos"></audio>
+		<audio id="death-with-dignity" src = "sound/death-with-dignity.ogg"
+		type="audio/ogg" title = "Sufjan Stevens - Death With Dignity"></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		<audio id="" src = "sound/"
+		type="audio/ogg" title = ""></audio>
+		
 
 	</div>
 	<div class = "section">
@@ -59,7 +106,7 @@
 		<img src = "img/sprinter.jpg" title = "Torres - Sprinter" onclick="play('strange-hellos')">
 		<img src = "img/carrie-and-lowell.jpg" title = "Sufjan Stevens - Carrie & Lowell" onclick="play('death-with-dignity')">
 	</div>
-	
+
 	<div class = "section">
 	<h1>9s</h1>
 		<img src = "img/birth-of-a-new-day.jpg" title = "２８１４ - 新しい日の誕生/Birth of a New Day">
@@ -74,8 +121,10 @@
 		<img src = "img/new-alhambra.jpg" title = "Elvis Depressedly - New Alhambra">
 		<img src = "img/garden-of-delete.jpg" title = "Oneohtrix Point Never - Garden of Delete">
 		<img src = "img/harmlessness.jpg" title = "The World Is A Beautiful Place And I Am No Longer Afraid To Die - Harmlessness">
+		<img src = "img/divers.jpg" title = "Joanna Newsom - Divers">
+		<img src = "img/vega-intl-night-school.jpg" title = "Neon Indian - Vega Intl. Night School">
 	</div>
-	
+
 	<div class = "section">
 	<h1>8s</h1>
 		<img src = "img/another-eternity.jpg" title = "Purity Ring - Another Eternity">
@@ -90,7 +139,10 @@
 		<img src = "img/california-nights.jpg" title = "Best Coast - California Nights" >
 		<img src = "img/looking-in.jpg" title = "Spencer Radcliffe - Looking In">
 		<img src = "img/taking-flight.jpg" title = "Ryan Hemsworth - Taking Flight">
+		<img src = "img/a-special-episode-of.jpg" title = "Open Mike Eagle - A Special Episode Of">
+		<img src = "img/art-angels.jpg" title = "Grimes - Art Angels">
+		<img src = "img/the-incredible-true-story.jpg" title = "Logic - The Incredible True Story">
 	</div>
-	
+
 
  </body>

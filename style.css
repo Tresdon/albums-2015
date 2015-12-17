@@ -4,6 +4,10 @@ img{
 	margin:5px;
 }
 
+img:hover{
+	cursor:pointer; cursor:hand;
+}
+
 .section{
 	margin: 0 auto;
 	width: 85%;
