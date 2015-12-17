@@ -19,3 +19,13 @@ body{
 	font-size: 40px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+#playing{
+	background: black;
+	color:white;
+	font-size: 30px;
+	position:fixed;
+	z-index: 1;
+	right: 5%;
+
+}
