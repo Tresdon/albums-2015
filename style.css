@@ -1,23 +1,39 @@
+a{
+	color:grey;
+}
+
+body{
+	font-size: 40px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color:grey;
+}
+
+
+footer{
+	color:grey;
+	text-align:center;
+	font-size:20px;
+	margin-top:5%;
+}
+
 img{
 	width:300px;
 	height:300px;
 	margin:5px;
 }
 
-img:hover{
-	cursor:pointer; cursor:hand;
-}
-
 .section{
 	margin: 0 auto;
-	width: 85%;
+	width: 90%;
 	margin-bottom:20px;
 	padding-bottom:20px;
 }
 
-body{
-	font-size: 40px;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
+#intro{
+	margin: 0 auto;
+	width: 90%;
+	color:grey;
+	font-size: 30px;
 }
 
 #playing{
@@ -27,5 +43,12 @@ body{
 	position:fixed;
 	z-index: 1;
 	right: 5%;
-
 }
+
+#ten > img:hover{
+	cursor:pointer;
+}
+
+
+
+

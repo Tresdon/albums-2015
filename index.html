@@ -5,53 +5,17 @@
 		<title>Cool Musical Projects Yo</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<link rel="icon" href="favicon.ico">
-		<script type="text/javascript">
-		var list = document.getElementsByTagName('audio');
-		function play(idString){
-				//pause all other audio
-				for(var i = 0; i < list.length; i++){
-					list[i].pause();
-				}
-
-				var audio = document.getElementById(idString);
-				if(!audio.paused){ //if audio is playing
-					audio.pause();
-				}
-				else{
-					audio.load();
-					audio.play();
-				}
-      }
-
-			 //checks if a song is playing and sets "playing" to that song and returns true
-			 // or returns false meaning that no song is playing.
-			 function checkPlaying()
-			 {
-					for(var i = 0; i < list.length; i++){
-						if(!list[i].paused){ //this element is playing
-							document.getElementById("playing").innerHTML = "♫: " + list[i].getAttribute("title");
-							setTimeout(checkPlaying,500);
-							return;
-						}
-					}
-					setTimeout(checkPlaying,500);
-					document.getElementById("playing").innerHTML = "";
-					return;
-				}
-
-				checkPlaying();
-
-
-
-
-	   </script>
+		<base target="_blank">
+		<script type="text/javascript" src="script.js"></script>
 	</head>
+	
  <body>
-	 <div id = "playing"></div>
-
+	<div id = "playing"></div>
 	<div id = "audio">
 		<audio id="alright" src = "sound/alright.ogg"
-		type="audio/ogg" title = "Kendrick Lamar - Alright"></audio>
+		type="audio/ogg" title = "Kendrick Lamar - Alright">
+		You cannot play the audio on this site :(
+		</audio>
 		<audio id="let-it-happen" src = "sound/let-it-happen.ogg"
 		type="audio/ogg" title = "Tame Impala - Let It Happen"></audio>
 		<audio id="sound-and-color" src = "sound/sound-and-color.ogg"
@@ -60,38 +24,24 @@
 		type="audio/ogg" title = "Torres - Strange Hellos"></audio>
 		<audio id="death-with-dignity" src = "sound/death-with-dignity.ogg"
 		type="audio/ogg" title = "Sufjan Stevens - Death With Dignity"></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-		<audio id="" src = "sound/"
-		type="audio/ogg" title = ""></audio>
-
-
 	</div>
-	<div class = "section">
+	<div id = "intro">	
+	<h1 id="title">Best Albums of 2015<span style = "font-size:12px;"> (to me ya dig)</span></h1>
+	2015 was a great year for music and I thought I would compile a list of
+	my favorite musical projects from the year to share with others and to look back on.
+	Let's get it out of the way that enjoyment of music is subjective and that <a href="http://thedailymash.co.uk/news/arts-entertainment/best-albums-of-2015-lists-inexplicably-different-20151210104637">everybody has different opinions</a> on what is groovy and such. 
+	These are groovy to me but they may not be to you who knows.
+	Each of the individual sections (10s, 9s, 8s) are supposed to be out of 10
+	and are not in any particular order within the section.
+	<br></br>
+	Feel free to <a href="https://open.spotify.com/user/crocodocile">follow me on Spotify</a> Which is honestly 
+	a bunch of incomplete playlists but a few solid ones of things I listen to over and over until the tinnitus sets in. (Check out the playlist 'exclusive'.)
+	<br></br>
+	I do not claim any of the rights to the content found on this website (I only wish I could make music and album art so pretty.) The images and music are property of the artists and record companies. This site is still somewhat under construction as there are some things I want to add but since the year is over I thought I might as well get it out there. Lastly, if you want to see the full name of an album just hover over the image and it should appear! &#x1F3A4;
+	&#x1F3A7;
+	</div>
+	
+	<div class = "section" id="ten">
 	<h1>10s</h1>
 		<img src = "img/to-pimp-a-butterfly.jpg" title = "Kendrick Lamar - To Pimp a Butterfly" onclick="play('alright')">
 		<img src = "img/currents.jpg" title = "Tame Impala - Currents" onclick="play('let-it-happen')">
@@ -135,7 +85,14 @@
 		<img src = "img/a-special-episode-of.jpg" title = "Open Mike Eagle - A Special Episode Of">
 		<img src = "img/art-angels.jpg" title = "Grimes - Art Angels">
 		<img src = "img/the-incredible-true-story.jpg" title = "Logic - The Incredible True Story">
+		<img src = "img/so-the-flies-dont-come.jpg" title = "Milo - So The Flies Don't Come">
+		<img src = "img/have-you-in-my-wilderness.jpg" title = "Julia Holter - Have You In My Wilderness">
+		<img src = "img/multi-love.jpg" title = "Unknown Mortal Orchestra - Multi-Love">
+		<img src = "img/what-for.jpg" title = "Toro Y Moi - What For?">
 	</div>
-
+	
+	<footer>
+	Designed and Developed by <a href = "http://github.com/Tresdon">Tresdon Jones</a>
+	</footer>
 
  </body>
