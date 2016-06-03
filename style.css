@@ -33,7 +33,7 @@ img{
 	margin: 0 auto;
 	width: 90%;
 	color:grey;
-	font-size: 30px;
+	font-size: 22px;
 }
 
 #playing{
@@ -48,7 +48,3 @@ img{
 #ten > img:hover{
 	cursor:pointer;
 }
-
-
-
-
